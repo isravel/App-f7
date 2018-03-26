@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="theme-color" content="#2196f3">
+    <meta http-equiv="Content-Security-Policy" content="default-src * 'self' 'unsafe-inline' 'unsafe-eval' data: gap:">
+    <title>Tamil Hymns</title>
+    <link rel="stylesheet" href="lib/framework7/css/framework7.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Mukta+Malar" rel="stylesheet">
+    <link rel="apple-touch-icon" href="img/f7-icon-square.png">
+    <link rel="icon" href="img/f7-icon.png">
+</head>
+
+<body class="color-theme-red">
+    <div id="app">
+        <div class="statusbar"></div>
+        <div class="view view-main view-init ios-edges" data-url="/">
+            <div class="page">
+                <div class="navbar">
+                    <div class="navbar-inner sliding">
+                        <!-- <div class="left">
+                            <a href="#" class="link back"><i class="icon icon-back"></i><span class="ios-only">Back</span></a>
+                        </div> -->
+                        <div class="title">Tamil Lutheran Hymns</div>
+                        <div class="subnavbar">
+                            <form data-search-container=".search-list" data-search-in=".item-title" class="searchbar searchbar-init">
+                                <div class="searchbar-inner">
+                                    <div class="searchbar-input-wrap">
+                                        <input type="search" placeholder="Search" />
+                                        <i class="searchbar-icon"></i>
+                                        <span class="input-clear-button"></span>
+                                    </div>
+                                    <span class="searchbar-disable-button">Cancel</span>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="toolbar tabbar-labels">
+                    <div class="toolbar-inner">
+                        <a href="#tab-1" class="tab-link tab-link-active"><i class="icon f7-icons">list_fill</i></a>
+                        <a href="/song/1/" class="tab-link"><i class="icon f7-icons">tune_fill</i></a>
+                        <a href="/settings/" class="tab-link"><i class="icon f7-icons">settings_fill</i></a>
+                    </div>
+                </div>
+                <div class="page-content">
+                    <div class="searchbar-backdrop"></div>
+                    <div class="list simple-list searchbar-not-found">
+                        <ul>
+                            <li>Nothing found</li>
+                        </ul>
+                    </div>
+                    <div class="list search-list searchbar-found mt-none">
+                        <ul id="song_list">
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+    <script type="text/javascript" src="jquery-2.1.4.js"></script>
+    <script src="lib/framework7/js/framework7.min.js"></script>
+    <script src="js/routes.js"></script>
+    <script src="js/my-app.js"></script>
+    <script type="text/javascript">
+    
+    jQuery.getJSON("sl", function(obj) {
+            jQuery.each(obj, function(key, value) {
+                jQuery("#song_list").append('<li class="item-content"> \
+                    <a href="/song/' + value.number + '/" class="link item-inner"> \
+                    <div class="item-title tamil song-list-item"><span>' + value.number + '</span> ' + value.title + '</div> \
+                    </a> \
+                    </li>');
+            });
+            console.log("success");
+        })
+        .done(function() {
+            console.log("second success");
+        })
+        .fail(function() {
+            console.log("error");
+        })
+        .always(function() {
+            console.log("complete");
+        });
+    </script>
+</body>
+
+</html>

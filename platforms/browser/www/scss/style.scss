@@ -1,0 +1,62 @@
+/*
+   statusbar-overlay sets the background color for the overlay. Black text is the default when the statusbar plugin is not added. When the
+   statusbar plugin is added, it also adds default setting to make the content white via:
+
+       <preference name="StatusBarStyle" value="lightcontent"/>
+
+   Setting the background color to black will allow the default light content (white text/icons) to show on it. The statusbar plugin is included
+   in the config.xml file and will be added by the CLI when you build locally.
+
+   See https://github.com/apache/cordova-plugin-statusbar
+*/
+
+@import "layout";
+.statusbar-overlay {
+    background: #000000;
+}
+
+.tabbar-labels {
+    height: 40px !important;
+    i.icon {
+        padding-top: 5px;
+    }
+}
+
+.tamil {
+    font-family: 'Mukta Malar', sans-serif !important;
+}
+
+.f-14 {
+    font-size: 14px;
+}
+
+.statusbar-overlay {
+    background: #F44336 !important;
+}
+
+.statusbar {
+    background: #F44336 !important;
+    /* We can add transition for smooth color animation */
+    transition: 400ms;
+}
+
+.page-content{
+	background: #fff;
+	color: #000;
+	.block{
+		color: #000;
+	}
+}
+.song-list-item{
+	color: #000;
+	>span{
+		font-size: 	120%;
+		padding-right: 15px;
+	}
+}
+
+/* Change Statusbar background when panel opened */
+
+html.with-panel-left-cover .statusbar {
+    background: #222;
+}
