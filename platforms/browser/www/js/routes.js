@@ -21,15 +21,15 @@ var routes = [
             var router = this;
             var app = router.app;
             var title, song, number;
-            var songId = (routeTo.params.songId) ;
-            var s = "s";
-            var s_id = s.concat(songId);
+            var songId = (routeTo.params.songId) -1;
+            // var s = "s";
+            // var s_id = s.concat(songId);
             setTimeout(function() {
                 Framework7.request.json('sl', function(data) {
                     console.log(data);
-                    title = data[""+s_id+""].title;
-                    song = data[""+s_id+""].full_song;
-                    number = data[""+s_id+""].number;
+                    title = data[songId].title;
+                    song = data[songId].full_song;
+                    number = data[songId].number;
                     // console.log(data.s1.number);
 
                     // console.log(user.songs[songId].title);

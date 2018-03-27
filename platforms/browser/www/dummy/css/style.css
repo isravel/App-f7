@@ -363,18 +363,38 @@
   /* We can add transition for smooth color animation */
   transition: 400ms; }
 
-.page-content {
+.theme-light .page-content {
   background: #fff;
   color: #000; }
-  .page-content .block {
+  .theme-light .page-content .block {
     color: #000; }
 
-.song-list-item {
+.theme-light .song-list-item {
   color: #000; }
-  .song-list-item > span {
-    font-size: 120%;
-    padding-right: 15px; }
+
+.theme-dark .page-content {
+  background: #1b1b1b;
+  color: #fff; }
+  .theme-dark .page-content .block {
+    color: #fff; }
+
+.theme-dark .song-list-item {
+  color: #fff; }
+
+.theme-dark .tabbar a, .theme-dark .ios .tabbar-labels a {
+  color: #fff; }
+
+.song-list-item > span {
+  font-size: 120%;
+  padding-right: 15px; }
+
+.nightmode.icons svg {
+  width: 20px;
+  height: 20px; }
 
 /* Change Statusbar background when panel opened */
 html.with-panel-left-cover .statusbar {
   background: #222; }
+
+.f120 {
+  font-size: 120%; }

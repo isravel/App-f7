@@ -40,23 +40,52 @@
     transition: 400ms;
 }
 
-.page-content{
-	background: #fff;
-	color: #000;
-	.block{
-		color: #000;
-	}
+.theme-light {
+    .page-content {
+        background: #fff;
+        color: #000;
+        .block {
+            color: #000;
+        }
+    }
+    .song-list-item {
+        color: #000;
+    }
 }
-.song-list-item{
-	color: #000;
-	>span{
-		font-size: 	120%;
-		padding-right: 15px;
-	}
+.theme-dark {
+    .page-content {
+        background: #1b1b1b;
+        color: #fff;
+        .block {
+            color: #fff;
+        }
+    }
+    .song-list-item {
+        color: #fff;
+    }
+     .tabbar a, .ios .tabbar-labels a{
+     	color: #fff;
+    }
+}
+
+.song-list-item {
+    >span {
+        font-size: 120%;
+        padding-right: 15px;
+    }
+}
+
+.nightmode.icons{
+	svg{width: 20px;
+		height: 20px;}
 }
 
 /* Change Statusbar background when panel opened */
 
 html.with-panel-left-cover .statusbar {
     background: #222;
+}
+
+.f120{
+	font-size: 120%;
 }
