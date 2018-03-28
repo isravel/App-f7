@@ -1,28 +1,28 @@
 <template>
-  <div class="page">
-    <div class="navbar">
-      <div class="navbar-inner sliding">
-        <div class="left">
-          <a href="#" class="link back">
+    <div class="page">
+        <div class="navbar">
+            <div class="navbar-inner sliding">
+                <div class="left">
+                    <a href="#" class="link back">
             <i class="icon icon-back"></i>
             <span class="ios-only">Back</span>
           </a>
+                </div>
+                <div class="title">Color Themes</div>
+            </div>
         </div>
-        <div class="title">Color Themes</div>
-      </div>
-    </div>
-    <div class="page-content">
-      <div class="block-title">Layout Themes</div>
+        <div class="page-content">
+            <div class="block-title">Layout Themes</div>
+            <div class="block">
+                <p>Layout themes: Light (default) and Dark:</p>
+                <div class="row">
+                    <div class="col-50 bg-color-white" @click="setLayoutTheme('light')" style="cursor: pointer; padding: 30px; border: 1px solid rgba(0,0,0,0.1)"></div>
+                    <div class="col-50 bg-color-black" @click="setLayoutTheme('dark')" style="cursor: pointer; padding: 30px; border: 1px solid rgba(255,255,255,0.1)"></div>
+                </div>
+            </div>
+            <!-- <div class="block-title">Choose Color Theme</div>
       <div class="block">
-        <p>Framework7 comes with 2 main layout themes: Light (default) and Dark:</p>
-        <div class="row">
-          <div class="col-50 bg-color-white" @click="setLayoutTheme('light')" style="cursor: pointer; padding: 30px; border: 1px solid rgba(0,0,0,0.1)"></div>
-          <div class="col-50 bg-color-black" @click="setLayoutTheme('dark')"  style="cursor: pointer; padding: 30px; border: 1px solid rgba(255,255,255,0.1)"></div>
-        </div>
-      </div>
-      <div class="block-title">Choose Color Theme</div>
-      <div class="block">
-        <p>Framework7 comes with {{colorsAmount}} color themes set.</p>
+        <p>{{colorsAmount}} color themes.</p>
         <div class="row">
         {{#each colors}}
           <div class="col-33">
@@ -31,46 +31,70 @@
         {{/each}}
           <div class="col-33"></div>
         </div>
-      </div>
+      </div> -->
+            <div class="block-title">About us</div>
+            <div class="block">
+                <h1>Tamil Lutheran Hymns <br><small>v 0.1</small></h1>
+                <p>
+                  On behalf TELC Adaikalanathar church youth we are happy to contribute towards Tamil Lutheran hymns. We as a team initiated a new app in the Google play store which is exclusive for tamil Lutheran hymns. We made this app with the guidance and support of church elders, congregation and church committee.
+                </p>
+                <p>This app brings you the hymns used by the<strong> Tamil Evangelical Lutheran Church </strong>hymnal book. Now, you can worship anytime, anywhere with all the lyrics you need in an elegantly designed app that doesn't display any ads.</p>
+                <p><strong>This app presents:-</strong></p>
+                <ul>
+                    <li>Songs has been listed in the order of the book for easy search</li>
+                    <li>You can go to any song by entering the song number or by its title in the song book. So if you know the song number you can quickly go to a song by directly entering the song number.</li>
+                    <li>Night mode reading view</li>
+                </ul>
+                <p><strong>Upcoming features:-</strong></p>
+                <ul>
+                    <li>Musical notes for each and every song</li>
+                    <li>Manage your favorite list</li>
+                    <li>Order of service</li>
+                    <li>Share with your friends</li>
+                    <li>And much more...</li>
+                </ul>
+                <p><strong>Editor:</strong><br> Dr. Prabhu durairaj
+                  <br><br><strong>App Developed by:</strong><br>Simon Patrick, Isravel Raj &amp; Aaron Ebinezer</p>
+            </div>
+        </div>
     </div>
-  </div>
 </template>
 <style scoped>
-  .button {
+.button {
     margin-bottom: 1em;
     text-transform: capitalize;
-  }
+}
 </style>
 <script>
-  return {
-    data: function () {
-      var colors = [
-        'red',
-        'green',
-        'blue',
-        'pink',
-        'yellow',
-        'orange',
-        'gray',
-        'black',
-      ];
-      return {
-        colors: colors,
-        colorsAmount: colors.length,
-      };
+return {
+    data: function() {
+        var colors = [
+            'red',
+            'green',
+            'blue',
+            'pink',
+            'yellow',
+            'orange',
+            'gray',
+            'black',
+        ];
+        return {
+            colors: colors,
+            colorsAmount: colors.length,
+        };
     },
     methods: {
-      setLayoutTheme: function (theme) {
-        var self = this;
-        self.$app.root.removeClass('theme-dark theme-light').addClass('theme-' + theme);
-      },
-      setColorTheme: function (color) {
-        var self = this;
-        var app = self.$app;
-        var currentColorClass = app.root[0].className.match(/color-theme-([a-z]*)/);
-        if (currentColorClass) app.root.removeClass(currentColorClass[0])
-          app.root.addClass('color-theme-' + color);
-      },
+        setLayoutTheme: function(theme) {
+            var self = this;
+            self.$app.root.removeClass('theme-dark theme-light').addClass('theme-' + theme);
+        },
+        setColorTheme: function(color) {
+            var self = this;
+            var app = self.$app;
+            var currentColorClass = app.root[0].className.match(/color-theme-([a-z]*)/);
+            if (currentColorClass) app.root.removeClass(currentColorClass[0])
+            app.root.addClass('color-theme-' + color);
+        },
     }
-  }
+}
 </script>

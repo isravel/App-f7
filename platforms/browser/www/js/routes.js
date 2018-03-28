@@ -30,6 +30,8 @@ var routes = [
                     title = data[songId].title;
                     song = data[songId].full_song;
                     number = data[songId].number;
+                    foot_notes = data[songId].foot_notes;
+                    ori_songname = data[songId].ori_songname;
                     // console.log(data.s1.number);
 
                     // console.log(user.songs[songId].title);
@@ -44,6 +46,8 @@ var routes = [
                             song: song,
                             title: title,
                             number: number,
+                            foot_notes: foot_notes,
+                            ori_songname: data[songId].ori_songname
                         }
                     });
                 });

@@ -399,7 +399,9 @@ html.with-panel-left-cover .statusbar {
 .f120 {
   font-size: 120%; }
 
-#song ul, #song ol {
-  padding-left: 15px; }
-  #song ul li, #song ol li {
-    margin-bottom: 10px; }
+#song {
+  font-size: 1rem; }
+  #song ul, #song ol {
+    padding-left: 15px; }
+    #song ul li, #song ol li {
+      margin-bottom: 10px; }

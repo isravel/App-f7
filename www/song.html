@@ -12,7 +12,7 @@
             <div class="toolbar-inner">
                 <a href="/" class="link back"><i class="icon material-icons">format_align_center</i></a>
                 <a href="/menu/" class="tab-link tab-link-active"><i class="icon f7-icons">tune_fill</i></a>
-                <a href="#tab-1" class="tab-link"><i class="icon f7-icons">settings_fill</i></a>
+                <a href="/settings/" class="tab-link"><i class="icon f7-icons">settings_fill</i></a>
             </div>
         </div>
         <div class="fab fab-right-bottom">
@@ -37,13 +37,20 @@
                     <p>
                         {{ song }}
                     </p>
+                    <p>
+                        <small>
+                        <b>{{ori_songname}}</b>
+                        <br>
+                        <span>
+                            {{ foot_notes }}
+                        </span>
+                    </small>
+                    </p>
                 </div>
             </div>
         </div>
     </div>
 </template>
-
-
 <script type="text/javascript">
 // var $ = Dom7;
 // var app = new Framework7();
